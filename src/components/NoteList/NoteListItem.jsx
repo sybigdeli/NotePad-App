@@ -1,4 +1,4 @@
-import NoteCard from "../NoteCard";
+import NoteCard from "./NoteCard";
 import getRandomColor from "@/randomColor";
 import { useState } from "react";
 
