@@ -1,0 +1,31 @@
+@font-face {
+  font-family: Estedad;
+  src: url(assets/fonts/estedad/Estedad-Regular.woff2);
+}
+@font-face {
+  font-family: Kaushan Script;
+  src: url(assets/fonts/KaushanScript/KaushanScript-Regular.ttf);
+}
+
+li {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+
+html {
+  direction: rtl;
+}
+  
+* {
+  font-family: inherit;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+html,
+body {
+  font-family: Estedad;
+}
