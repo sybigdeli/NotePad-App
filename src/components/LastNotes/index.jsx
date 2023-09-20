@@ -16,6 +16,7 @@ const lastNotes = [
     name: "خلاصه جلسه ۱۲ صدکدرز",
   },
 ];
+//////////////////////////////aaaa/////////////////////
 
 function LastNotes() {
   const [Selected, setSelected] = useState(null);
@@ -32,7 +33,7 @@ function LastNotes() {
             selected={item.id === Selected}
             onClick={() => setSelected(item.id)}
           />
-        ) )}
+        ))}
       </div>
     </section>
   );
