@@ -4,7 +4,7 @@ import OpenFolderIcon from "@/assets/images/icons/open-folder.svg";
 import NavBarItem from "./NavBarItem";
 import { useState } from "react";
 
-const folders = [
+const initialFolders = [
   {
     id: 1,
     name: "همه یاد‌داشت‌‌ها",
@@ -30,20 +30,22 @@ const folders = [
 function Folders() {
   const [Selected, setSelected] = useState(null);
   const [isShowNewFolder, setIsShowNewFolder] = useState(false);
-  
+  const [newFolderValue, setNewFolderValue] = useState();
+  const [folders, setFolders] = useState(initialFolders);
+
   const handleClick = () => {
     setIsShowNewFolder(true);
- 
   };
   const handleCancelNewFolder = () => {
     setIsShowNewFolder(false);
- 
   };
   const handleCreateFolder = () => {
-    console.log("ssd");
+    setFolders([ { name: newFolderValue, id: folders.length + 1 },...folders]);
+    setNewFolderValue(null);
+    setIsShowNewFolder(false);
   };
   const handleChangeInput = (e) => {
-    console.log("ssd" , e.target.value);
+    setNewFolderValue(e.target.value);
   };
   return (
     <section className="folders-container">
@@ -58,9 +60,13 @@ function Folders() {
         {isShowNewFolder && (
           <div className="nav-bar-new-folder">
             <img src={folderIcon} />
-            <input type="text" placeholder="Name..." onChange={handleChangeInput}/>
+            <input
+              type="text"
+              placeholder="Name..."
+              onChange={handleChangeInput}
+            />
             <button onClick={handleCreateFolder}>Ok</button>
-            <button onClick={handleCancelNewFolder}>cancel</button>
+            <button onClick={handleCancelNewFolder}>Cancel</button>
           </div>
         )}
 
