@@ -1,7 +1,7 @@
 import folderIcon from "@/assets/images/icons/folder.svg";
 import NewFolderIcon from "@/assets/images/icons/new-folder.svg";
 import OpenFolderIcon from "@/assets/images/icons/open-folder.svg";
-import NavBarItem from "../Navbar/NavBarItem";
+import NavBarItem from "./NavBarItem";
 import { useState } from "react";
 
 const folders = [

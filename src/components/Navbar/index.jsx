@@ -2,8 +2,8 @@ import Logo from "@/assets/images/logo.svg";
 import PlusIcon from "@/assets/images/icons/plus.svg";
 import SearchIcon from "@/assets/images/icons/search.svg";
 
-import Folders from "../Folders";
-import LastNotes from "../LastNotes";
+import Folders from "./NavbarFolders";
+import LastNotes from "./NavbarLastNotes";
 import More from "../More";
 import "./NavBar.css";
 

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import NavBarItem from "../Navbar/NavBarItem";
+import NavBarItem from "./NavBarItem";
 import DocIcon from "@/assets/images/icons/doc.svg";
 
 const lastNotes = [
