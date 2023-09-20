@@ -4,7 +4,6 @@ import SearchIcon from "@/assets/images/icons/search.svg";
 
 import Folders from "./NavbarFolders";
 import LastNotes from "./NavbarLastNotes";
-import More from "../More";
 import "./NavBar.css";
 
 function NavBar() {
@@ -26,7 +25,6 @@ function NavBar() {
 
       <Folders />
 
-      <More />
     </div>
   );
 }

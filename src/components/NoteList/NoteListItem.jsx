@@ -1,4 +1,4 @@
-import NoteCard from "./NoteCard";
+import NoteListNoteCard from "./NoteListNoteCard";
 import getRandomColor from "@/randomColor";
 import { useState } from "react";
 
@@ -30,7 +30,7 @@ function NoteListItem() {
 
   return NoteListItemTitle.map((note) => (
     
-    <NoteCard
+    <NoteListNoteCard
       key={note.id}
       {...note}
       // title={note.title}
