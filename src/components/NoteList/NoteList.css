@@ -1,6 +1,7 @@
 #note-list {
   flex-basis: 20%;
   background-color: #faead7;
+  overflow: hidden;
 }
 
 .note-list__title {

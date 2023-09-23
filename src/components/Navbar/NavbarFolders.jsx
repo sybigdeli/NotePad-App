@@ -7,22 +7,18 @@ import { useState } from "react";
 const initialFolders = [
   {
     id: 1,
-    name: "همه یاد‌داشت‌‌ها",
-  },
-  {
-    id: 2,
     name: "کاری",
   },
   {
-    id: 3,
+    id: 2,
     name: "مسافرت",
   },
   {
-    id: 4,
+    id: 3,
     name: "رویدادها",
   },
   {
-    id: 5,
+    id: 4,
     name: "باشگاه",
   },
 ];
@@ -69,7 +65,12 @@ function Folders() {
             <button onClick={handleCancelNewFolder}>Cancel</button>
           </div>
         )}
-
+        <NavBarItem 
+          key={0}
+          text={"همه یادداشت ها"}
+          icon={0 === Selected ? OpenFolderIcon : folderIcon}
+          onClick={() => setSelected(0)}
+        />
         {folders.map((item) => (
           <NavBarItem
             key={item.id}
