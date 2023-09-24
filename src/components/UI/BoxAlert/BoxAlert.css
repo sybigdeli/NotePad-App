@@ -1,0 +1,57 @@
+.alert-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 150px;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  padding: 2rem;
+  border-radius: 5px;
+  direction: ltr;
+  gap: 10px;
+}
+.alert-box__title {
+  color: gray;
+  font-size: 20px;
+  text-align: center;
+}
+.alert-box__items{
+  display: flex;
+  gap: 10px;
+}
+.alert-box__btn {
+  border-radius: 5px;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+.alert-box__btn--green{
+  color: green;
+  background-color: rgb(165, 255, 165);
+}
+.alert-box__btn--green:hover{
+  background-color: rgb(105, 246, 105);
+}
+.alert-box__btn--red{
+  color: red;
+  background-color: rgb(255, 199, 199);
+}
+.alert-box__btn--red:hover{
+  background-color: rgb(254, 164, 164);
+}
+.alert-box__btn--gray{
+  color: white;
+  background-color: gray;
+}
+.alert-box__btn--gray:hover{
+  background-color: rgb(178, 175, 175);
+}

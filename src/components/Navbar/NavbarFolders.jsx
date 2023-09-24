@@ -73,14 +73,14 @@ function Folders() {
 
       <div className="folders">
         {isShowNewFolder && (
-          <form className="nav-bar-new-folder">
+          <form className="nav-bar-new-folder" onSubmit={handleCreateFolder}>
             <img src={folderIcon} />
             <input
               type="text"
               placeholder="Name..."
               onChange={handleChangeInput}
             />
-            <Button onClick={handleCreateFolder} varient={"red"}>Ok</Button>
+            <Button varient={"red"} type="submit">Ok</Button>
             <Button onClick={handleCancelNewFolder} varient={"green"}>Cancel</Button>
           </form>
         )}
@@ -88,6 +88,7 @@ function Folders() {
           key={0}
           text={"همه یادداشت ها"}
           icon={0 === Selected ? OpenFolderIcon : folderIcon}
+          selected={0 === Selected}
           onClick={() => setSelected(0)}
         />
         {folders.map((item) => (
