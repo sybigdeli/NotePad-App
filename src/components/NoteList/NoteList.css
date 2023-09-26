@@ -1,6 +1,6 @@
 #note-list {
   flex-basis: 20%;
-  background-color: #faead7;
+  background-color: var(--color2);
   overflow: hidden;
 }
 
@@ -11,7 +11,7 @@
 }
 
 .note-list__title > h1 {
-  color: var(--gray-700, #363b40);
+  color: var(--color);
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
@@ -31,14 +31,14 @@
   transition: all 100ms ease;
   cursor: pointer;
   border-radius: 4px;
-  background: #fcf1e3;
+  background: var(--color4) !important;
   border-right: 4px solid;
 }
 .note-cards__card:hover{
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px ;
+  background-color: var(--color3);
 }
 .card__title {
-  color: var(--gray-700, #363b40);
+  color: var(--color);
   text-align: right;
   font-size: 15px;
   font-style: normal;
@@ -54,7 +54,7 @@
 }
 .card__description {
   overflow: hidden;
-  color: var(--gray-500, #595550);
+  color: var(--color);
   text-align: right;
   text-overflow: ellipsis;
   font-size: 12px;
@@ -64,7 +64,7 @@
   text-wrap: nowrap;
 }
 .card__date {
-  color: #a9957b;
+  color: var(--color);
   text-wrap: nowrap;
   font-size: 12px;
   font-style: normal;

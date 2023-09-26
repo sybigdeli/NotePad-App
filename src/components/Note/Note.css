@@ -1,7 +1,7 @@
 #Note {
   height: 100vh;
   flex-basis: 60%;
-  background-color: #f8eee2;
+  background-color: var(--color3);
   display: flex;
   padding: 50px;
   flex-direction: column;
@@ -17,7 +17,7 @@
   height: 80px;
 }
 .Note-Title {
-  color: var(--gray-700, #363b40);
+  color: var(--color);
   font-family: Estedad;
   font-size: 28px;
   font-style: normal;
@@ -27,7 +27,7 @@
 .Note-Text {
   width: 460px;
   height: 39px;
-  color: var(--gray-500, #595550);
+  color: var(--color);
   text-align: center;
   font-family: Estedad;
   font-size: 16px;

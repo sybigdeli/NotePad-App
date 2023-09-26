@@ -1,8 +1,7 @@
 function NavBarItem({ text, icon, selected, onClick }) {
-  const backgroundColorSelected = {backgroundColor: selected && "#FFFBFA"};
   return (
-    <div className="nav-bar-item" style={backgroundColorSelected} onClick={onClick}>
-      <img src={icon} />
+    <div className={`nav-bar-item ${selected && "nav-bar-item--selected"}`} onClick={onClick}>
+      {icon}
       {text}
     </div>
   );

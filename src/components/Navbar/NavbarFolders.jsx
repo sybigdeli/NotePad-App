@@ -1,10 +1,9 @@
-import folderIcon from "@/assets/images/icons/folder.svg";
-import NewFolderIcon from "@/assets/images/icons/new-folder.svg";
-import OpenFolderIcon from "@/assets/images/icons/open-folder.svg";
+import FolderIcon from "@/components/UI/Icons/Folder";
+import NewFolderIcon from "@/components/UI/Icons/NewFolder";
+import OpenFolderIcon from "@/components/UI/Icons/OpenFolder";
 import NavBarItem from "./NavBarItem";
-import Button from "../UI/Button";
-import { useState } from "react";
-
+import Button from "@/components/UI/Button";
+import { useEffect, useState } from "react";
 const initialFolders = [
   {
     id: 1,
@@ -30,8 +29,8 @@ function Folders() {
   const [newFolderValue, setNewFolderValue] = useState();
   const [folders, setFolders] = useState(initialFolders);
   const isRepeat = folders.find((FolderName) => {
-    return newFolderValue === FolderName.name
-  })
+    return newFolderValue === FolderName.name;
+  });
 
   const handleClick = () => {
     setIsShowNewFolder(true);
@@ -45,10 +44,8 @@ function Folders() {
       newFolderValue === null ||
       newFolderValue === undefined
     ) {
-      alert("Please Enter a Name");
-    } else if (isRepeat !== undefined ||
-      newFolderValue === "همه یادداشت ها"
-    ) {
+      alert("not");
+    } else if (isRepeat !== undefined || newFolderValue === "همه یادداشت ها") {
       alert("Name used");
     } else {
       setFolders([
@@ -62,32 +59,53 @@ function Folders() {
   const handleChangeInput = (e) => {
     setNewFolderValue(e.target.value);
   };
+
+  useEffect(() => {
+    const handleClick = (event) => {
+      const isClickInForm = event.target.closest(".nav-bar-new-folder,header");
+      if (!isClickInForm) {
+        setIsShowNewFolder(false);
+      }
+    };
+    if (isShowNewFolder) {
+      document.body.addEventListener("click", handleClick);
+    }
+    return () => {
+      document.body.removeEventListener("click", handleClick);
+    };
+  }, [isShowNewFolder]);
+
   return (
     <section className="folders-container">
       <header>
         <h2>پوشه‌ها</h2>
         <button className="new-folder-button" onClick={handleClick}>
-          <img src={NewFolderIcon} />
+          <NewFolderIcon/>
         </button>
       </header>
 
       <div className="folders">
         {isShowNewFolder && (
           <form className="nav-bar-new-folder" onSubmit={handleCreateFolder}>
-            <img src={folderIcon} />
+            <FolderIcon/>
             <input
+              autoFocus
               type="text"
               placeholder="Name..."
               onChange={handleChangeInput}
             />
-            <Button varient={"red"} type="submit">Ok</Button>
-            <Button onClick={handleCancelNewFolder} varient={"green"}>Cancel</Button>
+            <Button varient={"red"} type="submit">
+              Ok
+            </Button>
+            <Button onClick={handleCancelNewFolder} varient={"green"}>
+              Cancel
+            </Button>
           </form>
         )}
         <NavBarItem
           key={0}
           text={"همه یادداشت ها"}
-          icon={0 === Selected ? OpenFolderIcon : folderIcon}
+          icon={0 === Selected ? (<OpenFolderIcon/>) : (<FolderIcon/>)}
           selected={0 === Selected}
           onClick={() => setSelected(0)}
         />
@@ -95,7 +113,7 @@ function Folders() {
           <NavBarItem
             key={item.id}
             text={item.name}
-            icon={item.id === Selected ? OpenFolderIcon : folderIcon}
+            icon={item.id === Selected ? (<OpenFolderIcon/>) : (<FolderIcon/>)}
             selected={item.id === Selected}
             onClick={() => setSelected(item.id)}
           />

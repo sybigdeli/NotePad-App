@@ -1,6 +1,6 @@
 import { useState } from "react";
 import NavBarItem from "./NavBarItem";
-import DocIcon from "@/assets/images/icons/doc.svg";
+import DocIcon from "@/components/UI/Icons/Doc";
 
 const lastNotes = [
   {
@@ -29,7 +29,7 @@ function LastNotes() {
           <NavBarItem
             key={item.name}
             text={item.name}
-            icon={DocIcon}
+            icon={(<DocIcon/>)}
             selected={item.id === Selected}
             onClick={() => setSelected(item.id)}
           />

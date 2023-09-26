@@ -1,3 +1,10 @@
+:root {
+  --color: #fff;
+  --color1: #404258;
+  --color2: #474E68;
+  --color3: #50577A;
+  --color4: #6B728E; 
+}
 #root {
   display: flex;
   height: 100vh;

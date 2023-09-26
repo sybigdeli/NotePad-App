@@ -1,7 +1,7 @@
 
 function NoreCard({ title, description, date, borderColor , selected , onClick }) {
 
-    const borderColorstyle = { borderColor: borderColor , backgroundColor: selected ? "#FFFBFA" :  "#FCF1E3"};
+    const borderColorstyle = { borderColor: borderColor , backgroundColor: selected ? "#FFFBFA" :  "#6B728E"};
   
     return (
       <div key={title} className={"note-cards__card"} style={borderColorstyle} onClick={onClick}>
