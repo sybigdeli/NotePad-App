@@ -18,7 +18,7 @@ const lastNotes = [
 ];
 //////////////////////////////aaaa/////////////////////
 
-function LastNotes() {
+function LastNotes({colorIcons}) {
   const [Selected, setSelected] = useState(null);
   return (
     <section className="last-notes-container">
@@ -29,7 +29,7 @@ function LastNotes() {
           <NavBarItem
             key={item.name}
             text={item.name}
-            icon={(<DocIcon/>)}
+            icon={(<DocIcon fill={colorIcons ? "white" : "black"}/>)}
             selected={item.id === Selected}
             onClick={() => setSelected(item.id)}
           />

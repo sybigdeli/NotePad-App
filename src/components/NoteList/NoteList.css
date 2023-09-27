@@ -62,6 +62,7 @@
   font-weight: 400;
   line-height: normal;
   text-wrap: nowrap;
+  opacity: 0.8;
 }
 .card__date {
   color: var(--color);
@@ -70,6 +71,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: 18px; /* 150% */
+  opacity: 0.6;
 }
 
 .red {
