@@ -1,38 +1,29 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import NavBarItem from "./NavBarItem";
 import DocIcon from "@/components/UI/Icons/Doc";
+import { noteContext } from "@/providers/NoteProvider";
+import { Link, useParams } from "react-router-dom";
 
-const lastNotes = [
-  {
-    id: 1,
-    name: "هدفم برای سال جدید",
-  },
-  {
-    id: 2,
-    name: "کتاب‌هایی که می‌خوام بخونم",
-  },
-  {
-    id: 3,
-    name: "خلاصه جلسه ۱۲ صدکدرز",
-  },
-];
 //////////////////////////////aaaa/////////////////////
 
-function LastNotes({colorIcons}) {
-  const [Selected, setSelected] = useState(null);
+function LastNotes() {
+  const {noteId} = useParams();
+  const { notes } = useContext(noteContext);
+
+  const lastNotes = notes.slice(-3);
   return (
     <section className="last-notes-container">
       <h2>آخرین یادداشت‌ها</h2>
 
       <div className="last-notes">
         {lastNotes.map((item) => (
-          <NavBarItem
-            key={item.name}
-            text={item.name}
-            icon={(<DocIcon fill={colorIcons ? "white" : "black"}/>)}
-            selected={item.id === Selected}
-            onClick={() => setSelected(item.id)}
-          />
+          <Link to={`/note/${item.id}`} key={item.id}>
+            <NavBarItem
+              text={item.title}
+              icon={<DocIcon />}
+              selected={item.id == noteId}
+            />
+          </Link>
         ))}
       </div>
     </section>

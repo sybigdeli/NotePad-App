@@ -23,7 +23,7 @@ const initialFolders = [
   },
 ];
 
-function Folders({colorIcons}) {
+function Folders() {
   const [Selected, setSelected] = useState(null);
   const [isShowNewFolder, setIsShowNewFolder] = useState(false);
   const [newFolderValue, setNewFolderValue] = useState();
@@ -80,14 +80,14 @@ function Folders({colorIcons}) {
       <header>
         <h2>پوشه‌ها</h2>
         <button className="new-folder-button" onClick={handleClick}>
-          <NewFolderIcon fill={colorIcons ? "white" : "black"}/>
+          <NewFolderIcon/>
         </button>
       </header>
 
       <div className="folders">
         {isShowNewFolder && (
           <form className="nav-bar-new-folder" onSubmit={handleCreateFolder}>
-            <FolderIcon fill={colorIcons ? "white" : "black"}/>
+            <FolderIcon/>
             <input
               autoFocus
               type="text"
@@ -105,7 +105,7 @@ function Folders({colorIcons}) {
         <NavBarItem
           key={0}
           text={"همه یادداشت ها"}
-          icon={0 === Selected ? (<OpenFolderIcon fill={colorIcons ? "white" : "black"}/>) : (<FolderIcon fill={colorIcons ? "white" : "black"}/>)}
+          icon={0 === Selected ? (<OpenFolderIcon/>) : (<FolderIcon/>)}
           selected={0 === Selected}
           onClick={() => setSelected(0)}
         />
@@ -113,7 +113,7 @@ function Folders({colorIcons}) {
           <NavBarItem
             key={item.id}
             text={item.name}
-            icon={item.id === Selected ? (<OpenFolderIcon fill={colorIcons ? "white" : "black"}/>) : (<FolderIcon fill={colorIcons ? "white" : "black"}/>)}
+            icon={item.id === Selected ? (<OpenFolderIcon/>) : (<FolderIcon/>)}
             selected={item.id === Selected}
             onClick={() => setSelected(item.id)}
           />

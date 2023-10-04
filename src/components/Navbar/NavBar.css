@@ -21,6 +21,7 @@
   align-items: center;
   cursor: pointer;
   transition: all 200ms ease;
+  color: var(--color);
 }
 .search-button svg:hover{
   opacity: 0.8;
@@ -33,6 +34,7 @@
   align-items: center;
   padding: 5px;
   cursor: pointer;
+  color: var(--color);
 }
 .light-mode__btn svg{
   transition: all 200ms ease;
@@ -81,6 +83,10 @@
   align-items: flex-start;
   gap: 5px;
   align-self: stretch;
+  text-overflow: ellipsis;
+}
+.last-notes a{
+  width: 100%;
 }
 
 .folders-container header {
@@ -108,6 +114,7 @@
   transition: all 300ms ease;
   padding: 5px;
   border-radius: 4px;
+  color: var(--color);
 }
 .new-folder-button:hover{
   background-color: var(--color4);
@@ -143,6 +150,9 @@
   background: rgb(246, 216, 178);
 }
 .nav-bar-item {
+  width: 100%;
+  text-align: right;
+  text-wrap: nowrap;
   display: flex;
   padding: 10px 20px;
   justify-content: flex-start;
@@ -156,6 +166,8 @@
   font-weight: 500;
   line-height: 21px;
   transition: all 200ms ease;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .nav-bar-item--selected{
   background-color: var(--color4) !important;

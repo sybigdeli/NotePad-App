@@ -35,15 +35,22 @@
   border-right: 4px solid;
 }
 .note-cards__card:hover{
-  background-color: var(--color3);
+  background-color: var(--color1) !important;
+}
+.note-cards__card--selected{
+  background-color: var(--color3) !important;
 }
 .card__title {
+  width: 100%;
   color: var(--color);
   text-align: right;
   font-size: 15px;
   font-style: normal;
   font-weight: 600;
   line-height: 28px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-wrap: nowrap;
 }
 .card__footer {
   display: flex;

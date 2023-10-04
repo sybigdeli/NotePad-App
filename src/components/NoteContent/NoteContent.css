@@ -29,13 +29,22 @@
   align-self: stretch;
   position: relative;
   padding-bottom: 10px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.title-bar::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 1px;
+  background-color: var(--color);
+  opacity: 0.1;
 }
 .title-bar__folder-description {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
+  color: var(--color);
 }
 .icon-title {
   color: var(--color);
@@ -61,6 +70,7 @@
   justify-content: flex-end;
   align-items: center;
   gap: 12px;
+  color: var(--color);
 }
 .folder-date {
   color: var(--color);
@@ -86,9 +96,36 @@
   border-top: 1px solid var(--color);
   border: none;
   outline: none;
-  transition: all 400ms ease;
+  transition: box-shadow 400ms ease;
   border-radius: 5px;
+  padding: 5px;
+  resize: none;
 }
-.note-content:focus{
+.note-content::placeholder{
+  color: var(--color);
+}
+.note-content:focus {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.note-content-title {
+  width: 70% !important;
+  background-color: transparent;
+  border: none;
+  width: fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color);
+  font-family: Estedad;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  outline: none;
+}
+.note-content-title:focus{
+  text-decoration: underline;
+}
+.note-content-title::placeholder{
+  color: var(--color);
 }

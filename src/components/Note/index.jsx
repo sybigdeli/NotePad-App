@@ -1,15 +1,21 @@
 import "./Note.css";
-import NoteIcone from '@/components/UI/Icons/Note'
-
+import NoteContent from "../NoteContent";
+import NoteEmpty from "../NoteEmpty";
+import { useContext } from "react";
+import { noteContext } from "@/providers/NoteProvider";
+import { useParams } from "react-router-dom";
 function Note() {
+  const { noteId } = useParams();
+  const { notes, updateNote } = useContext(noteContext);
+
+  const selectedNote = notes.find((n) => n.id == noteId);
   return (
     <div id="Note">
-      <NoteIcone/>
-      <h4 className="Note-Title">یک یادداشت را برای نمایش انتخاب کنید</h4>
-      <p className="Note-Text">
-        از لیست سمت راست یک يادداشت را انتخاب کنید، یا یک یادداشت جدید ایجاد
-        کنید.
-      </p>
+      {noteId == 0 || selectedNote ? (
+        <NoteContent note={selectedNote} onUpdate={updateNote} />
+      ) : (
+        <NoteEmpty />
+      )}
     </div>
   );
 }
